@@ -4,9 +4,9 @@ import { GoogleSVG } from "@/icons/Google";
 
 export default function SignInComponent() {
   return (
-    <main className="flex h-screen items-center justify-center">
+    <main className="flex min-h-[80svh] items-center justify-center">
       <form
-        className="flex flex-col gap-4 rounded-lg border p-8 text-center"
+        className="flex flex-col gap-2 rounded-lg border p-8 text-center"
         action={async () => {
           "use server";
           await signIn("google", {
@@ -20,7 +20,7 @@ export default function SignInComponent() {
 
         <p className="text-neutral-400">Sign in to continue</p>
 
-        <Button type="submit" className="mt-4 flex gap-6 text-base font-medium">
+        <Button type="submit" className="mt-8 flex gap-6 text-base font-medium">
           <GoogleSVG />
           Sign in with Google
         </Button>
