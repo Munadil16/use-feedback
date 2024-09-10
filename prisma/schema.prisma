@@ -9,8 +9,18 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(cuid())
-  name  String
-  email String @unique
-  image String
+  id       String    @id @default(cuid())
+  name     String
+  email    String    @unique
+  image    String
+  products Product[]
+}
+
+model Product {
+  id      String @id @default(cuid())
+  name    String
+  title   String
+  message String
+  userId  String
+  User    User   @relation(fields: [userId], references: [id])
 }
