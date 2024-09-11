@@ -7,7 +7,7 @@ export default async function Navbar() {
   const session = await auth();
 
   return (
-    <nav className="sticky left-0 top-0 z-50 flex items-center justify-between border-b px-6 py-3">
+    <nav className="sticky left-0 top-0 z-50 flex items-center justify-between bg-zinc-50 px-6 py-3 drop-shadow-[0_0_2px_rgba(0,0,0,0.3)] dark:bg-zinc-950 dark:drop-shadow-[0_0_2px_rgba(255,255,255,0.2)]">
       <Link className="text-lg font-medium sm:text-xl" href="/">
         UseFeedback
       </Link>
