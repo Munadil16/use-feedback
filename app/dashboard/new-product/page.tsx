@@ -9,7 +9,7 @@ import { productCreatedAtom } from "@/store/atoms/product-created";
 export default function NewProduct() {
   const isProductCreated = useRecoilValue(productCreatedAtom);
 
-  if (!isProductCreated) {
+  if (isProductCreated) {
     return <ProductCreated />;
   }
 
