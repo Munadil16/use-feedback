@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { auth } from "@/lib/auth";
 import ToggleTheme from "./toggle-theme";
+import ProfileDropdown from "./profile-dropdown";
 
 export default async function Navbar() {
   const session = await auth();
@@ -28,13 +28,7 @@ export default async function Navbar() {
               Dashboard
             </Link>
 
-            <Image
-              className="cursor-pointer rounded-full border"
-              src={session.user.image!}
-              width={33}
-              height={33}
-              alt="profile image"
-            />
+            <ProfileDropdown user={session.user} />
           </>
         ) : (
           <Link className="hover:text-neutral-400" href="/signin">
