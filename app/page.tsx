@@ -1,3 +1,9 @@
+import LandingPage from "@/components/landing-page";
+
 export default function Home() {
-  return <h1>UseFeedBack</h1>;
+  return (
+    <main className="flex justify-center py-16">
+      <LandingPage />
+    </main>
+  );
 }

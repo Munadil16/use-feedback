@@ -15,10 +15,6 @@ export default async function Navbar() {
       <div className="flex items-center gap-6">
         <ToggleTheme />
 
-        <Link className="hidden hover:text-neutral-400 sm:block" href="/docs">
-          Docs
-        </Link>
-
         {session?.user ? (
           <>
             <Link

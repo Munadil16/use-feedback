@@ -10,7 +10,7 @@ export default function SignInComponent() {
         action={async () => {
           "use server";
           await signIn("google", {
-            redirectTo: "/",
+            redirectTo: "/dashboard",
           });
         }}
       >

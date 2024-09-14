@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
-import { signOut } from "@/lib/auth";
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 interface ProfileDropdownProps {
@@ -39,10 +39,7 @@ export default function ProfileDropdown({ user }: ProfileDropdownProps) {
           Dashboard
         </DropdownMenuItem>
 
-        <DropdownMenuItem
-          className="sm:hidden"
-          onClick={() => router.push("/docs")}
-        >
+        <DropdownMenuItem onClick={() => router.push("/docs")}>
           Docs
         </DropdownMenuItem>
 
