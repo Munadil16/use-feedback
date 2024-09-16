@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import * as motion from "framer-motion/client";
 import { notFound, redirect } from "next/navigation";
 import FeedbackCard from "@/components/feedback-card";
+import CodeComponent from "@/components/code";
 
 export default async function Product({
   params: { productId },
@@ -11,6 +12,8 @@ export default async function Product({
   params: { productId: string };
 }) {
   const session = await auth();
+  const code = `<div id="embed-feedbacks"></div>
+<script src="${process.env.NEXT_PUBLIC_BASE_URL}api/embed-feedbacks?productId=${productId}"></script>`;
 
   if (!session || !session.user) {
     redirect("/signin");
@@ -49,6 +52,10 @@ export default async function Product({
             </Link>
           </p>
         </div>
+
+        <CodeComponent code={code} />
+
+        <p className="text-xl font-medium">Feedback</p>
 
         <motion.article
           className="flex flex-col gap-5"
