@@ -1,12 +1,21 @@
 "use client";
 
 import { useRecoilValue } from "recoil";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import ProductForm from "@/components/product-form";
 import ProductPreview from "@/components/product-preview";
 import ProductCreated from "@/components/product-created";
 import { productCreatedAtom } from "@/store/atoms/product-created";
 
 export default function NewProduct() {
+  const router = useRouter();
+  const { data: session } = useSession();
+
+  if (!session || !session.user) {
+    router.push("/signin");
+  }
+
   const isProductCreated = useRecoilValue(productCreatedAtom);
 
   if (isProductCreated) {
