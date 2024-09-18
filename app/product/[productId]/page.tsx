@@ -44,7 +44,7 @@ export default async function Product({
           <p className="text-[0.84rem] text-neutral-500 dark:text-neutral-400 sm:text-sm">
             Feedback URL:{" "}
             <Link
-              className="underline hover:text-neutral-200"
+              className="break-all underline hover:text-neutral-200"
               href={productFeedbackURL}
               target="_blank"
             >

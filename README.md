@@ -30,7 +30,7 @@ customer feedback with no technical skills or hosting required.
 3. **Environment variables:**
 
 ```bash
-cp .env.example .env
+  cp .env.example .env.local
 ```
 
 4. **Start the development server:**
