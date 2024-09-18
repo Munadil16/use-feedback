@@ -44,8 +44,10 @@ export default function ProductCreated() {
       }
     };
 
-    fetchProductId();
-  }, []);
+    if (newProduct.name) {
+      fetchProductId();
+    }
+  }, [newProduct.name]);
 
   return (
     <main className="flex min-h-[80svh] items-center justify-center">

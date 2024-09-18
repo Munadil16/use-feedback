@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function Docs() {
+export default function Docs() {
   return (
     <main className="flex justify-center p-8">
       <section className="flex w-[90vw] flex-col gap-6 sm:w-[80vw] md:w-[70vw] lg:w-[60vw]">

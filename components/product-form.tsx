@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 import { FormEvent } from "react";
 import { Input } from "./ui/input";
@@ -27,9 +27,14 @@ export default function ProductForm() {
         toast.success(res.data.message);
         setIsProductCreated(true);
       }
-    } catch (err: any) {
+    } catch (err) {
       toast.dismiss(toastId);
-      toast.error(err.response.data.message);
+
+      if (err instanceof AxiosError) {
+        toast.error(err.response?.data.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     }
   };
 

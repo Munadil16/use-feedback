@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 import dynamic from "next/dynamic";
 import { useRecoilValue } from "recoil";
@@ -60,9 +60,14 @@ export default function FeedbackForm({
         toast.success(res.data.message);
         router.push(`${productDetails.id}/submitted`);
       }
-    } catch (err: any) {
+    } catch (err) {
       toast.dismiss(toastId);
-      toast.error(err.response.data.message);
+
+      if (err instanceof AxiosError) {
+        toast.error(err.response?.data.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     }
   };
 
