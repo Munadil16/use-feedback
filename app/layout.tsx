@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/components/providers";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Toaster position="top-right" richColors={true} />
+          <Analytics />
         </Providers>
       </body>
     </html>
