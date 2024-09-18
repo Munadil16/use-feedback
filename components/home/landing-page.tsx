@@ -33,7 +33,7 @@ export default async function LandingPage() {
         </Button>
       </div>
 
-      <div>
+      <div className="w-full">
         <p className="mb-2 text-xl font-medium">Try the sample code below</p>
         <SampleCode />
       </div>
