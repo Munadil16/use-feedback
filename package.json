@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "primsa generate",
+    "postinstall": "prisma generate",
     "migrate:dev": "dotenv -e .env.local -- pnpm dlx prisma migrate dev",
     "prisma:generate": "dotenv -e .env.local -- pnpm dlx prisma generate",
     "prisma:studio": "dotenv -e .env.local -- pnpm dlx prisma studio",
