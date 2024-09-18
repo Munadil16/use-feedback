@@ -68,6 +68,12 @@ export default async function Product({
             stiffness: 100,
           }}
         >
+          {productDetails.feedbacks.length === 0 && (
+            <p className="text-center font-medium text-neutral-400">
+              No feedback recieved yet.
+            </p>
+          )}
+
           {productDetails.feedbacks.map((feedback) => {
             return <FeedbackCard key={feedback.id} feedback={feedback} />;
           })}
